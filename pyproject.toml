@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "securitylint"
+version = "0.1.0"
+description = "Static security checks for configuration files"
+requires-python = ">=3.9"
+
+[tool.setuptools]
+py-modules = ["securitylint"]
