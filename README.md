@@ -1,14 +1,59 @@
-# securitylint
+# SecurityLint
 
-Dependency-free static checks for common insecure configuration patterns.
+> Static checks for common insecure configuration patterns.
+
+SecurityLint is a lightweight defensive analysis tool that flags configuration patterns worth reviewing before they become security problems.
 
 ## Checks
+
 - Wildcard bind addresses
-- Plaintext credential-like keys
-- Debug mode in configuration
-- Missing secure transport flags
+- Credential-like configuration keys
+- Debug mode enabled in configuration
+- Missing secure-transport indicators
+- Clear, actionable findings
 
-This tool reports patterns only and never modifies systems.
+The tool reports patterns. It does not modify the systems or configuration it analyzes.
 
-## Credits
-Built by medu. https://guns.lol/meduu
+## Workflow
+
+```text
+configuration
+      ↓
+static inspection
+      ↓
+findings
+      ↓
+review
+      ↓
+remediation
+```
+
+## Example
+
+```bash
+securitylint ./config.json
+```
+
+For the exact command-line interface and supported formats, see the installed package and tests.
+
+## Why it exists
+
+Many security problems start as ordinary configuration mistakes. A small static check can catch obvious risky patterns early without requiring a live target or intrusive testing.
+
+## Safety
+
+SecurityLint is intended for defensive code and configuration review. It does not perform exploitation, credential collection or unauthorized access.
+
+## Development
+
+```bash
+python -m pytest
+```
+
+## License
+
+MIT. See `LICENSE`.
+
+## Author
+
+Built by **Medu** · https://guns.lol/meduu
